@@ -10,7 +10,7 @@ function generateHashtag(string) {
     };
 
     // Split(Separate) every word from the provided string
-    const splittedString =  string.split(' ');
+    const splittedString =  string.trim().split(' ');
 
     // Replace every first letter to uppercase
     for(let i = 0; i < splittedString.length; i++){
@@ -22,7 +22,7 @@ function generateHashtag(string) {
     const joinedWords =  splittedString.join('');
     
 
-    return joinedWords;
+    return '#' +joinedWords;
 }
 
 console.log(generateHashtag('something very interesting text'));
