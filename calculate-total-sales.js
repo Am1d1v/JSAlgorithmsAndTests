@@ -2,18 +2,18 @@
 
 function calculateTotalSalesWithTax(products, taxRate) {
 
+    // Total Sales
     const totalSales = products.reduce((sum, product) => sum + product.price * product.quantity, 0)
 
-    return totalSales
+    // Tax Amount
+    const taxAmount = (totalSales * taxRate) / 100
+
+    // Total sales plus tax amount
+    const totalSalesWithTax = totalSales + taxAmount
+
+    return parseFloat(totalSalesWithTax.toFixed(2));
 
 }
 
-const products = [
-    { name: 'Apple', price: 0.5, quantity: 10 },
-    { name: 'Banana', price: 0.3, quantity: 20 },
-    { name: 'Orange', price: 0.6, quantity: 15 },
-  ];
-
-console.log(calculateTotalSalesWithTax(products));
 
 module.exports = calculateTotalSalesWithTax;
