@@ -10,4 +10,6 @@ test('Generating Hashtags', () => {
     // Empty string provided
     expect(generateHashtag((''))).toBe(false);
 
+    // Provided string longer than 140
+    expect(generateHashtag(('very very very very  very very very very very very very very very very very very very very very very very very very very very very  longstring'))).toBe(false);
 });

@@ -25,6 +25,4 @@ function generateHashtag(string) {
     return '#' +joinedWords;
 }
 
-console.log(generateHashtag('something very interesting text'));
-
 module.exports = generateHashtag;
