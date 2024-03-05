@@ -10,13 +10,14 @@ function validatePassword(password) {
     const hasUpperCase = password.split('')
                                  .some((char) => char === char.toUpperCase() && char !== char.toLowerCase());
 
-    console.log(hasUpperCase);
-
     // Password must contain at least 1 LowerCase letter
-    const hasLowerCase= '';
+    const hasLowerCase= password.split('')
+                                .some((char) => char === char.toLowerCase() && char !== char.toUpperCase());;
 
     // Password must contain at least 1 digit
-    const hasDigit= '';
+    const hasDigit= password.split('')
+                            .some((char) => !isNaN(parseInt(char, 10))); 
+                                               
 
     if(isLengthValid && hasUpperCase && hasLowerCase && hasDigit){
         return true
@@ -24,17 +25,22 @@ function validatePassword(password) {
 
     if(!isLengthValid){
         return ('Password must be at least 8 characters long');
-    } else if(!hasUpperCase){
+    }
+    
+    if(!hasUpperCase){
         return ('Password must contain at least 1 UpperCase letter');
-    } else if (!hasLowerCase){
+    }
+    
+    if (!hasLowerCase){
         return ('Password must contain at least 1 LowerCase letter');
-    } else if (hasDigit){
-        return ('Password must contain at least 1 digit');
     }
 
+    if (!hasDigit){
+        return ('Password must contain at least 1 digit');
+    } 
+
+    return false
 }
 
-console.log(validatePassword('123456789'));
-console.log(validatePassword('a123456789'));
 
 module.exports = validatePassword;
