@@ -15,8 +15,6 @@ function numberRange(startNumber, endNumber) {
 }
 
 console.log(numberRange(2, 2));
-console.log(numberRange(2, 4));
-console.log(numberRange(3, 10));
-
+console.log(numberRange(1, 5));
 
 module.exports = numberRange;
