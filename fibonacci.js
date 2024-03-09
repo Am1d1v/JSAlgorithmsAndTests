@@ -7,12 +7,9 @@ function fibonacci(num) {
         return num;
     }
 
-    
     return fibonacci(num - 1) + fibonacci(num - 2);
 
 }
 
-//console.log(fibonacci(0));
-console.log(fibonacci(6));
 
 module.exports = fibonacci;
